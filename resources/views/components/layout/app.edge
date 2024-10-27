@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html class="h-full">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>
+      {{ title }}
+    </title>
+
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
+  </head>
+  <body class="bg-gray-50 min-h-full w-full">
+    <header
+      class="flex flex-wrap sm:justify-start sm:flex-nowrap w-full bg-gray-100 shadow-2xl text-sm py-4 dark:bg-neutral-800"
+    >
+      <nav class="max-w-6xl w-full mx-auto px-4 flex flex-col items-center sm:flex-row sm:items-center sm:justify-between">
+        <a
+          class="flex-none font-semibold text-xl text-black focus:outline-none focus:opacity-80 dark:text-white"
+          href="#"
+          aria-label="Brand"
+        >Cuddly Posts!</a>
+        <div class="flex flex-row items-center gap-5 mt-5 sm:justify-end sm:mt-0 sm:ps-5">
+          @eval(await auth.check())
+          @if(auth.isAuthenticated)
+            <div>Hello, {{auth.user.username}}</div>
+            <form action="/logout?_method=DELETE" method="post">
+              {{csrfField()}}
+              <button class="text-gray-600 font-medium hover:text-gray-400">Logout</button>
+            </form>
+          @else
+            <a href="/login" class="text-gray-600 font-medium hover:text-gray-400">Login</a>
+            <a href="/register" class="text-gray-600 font-medium hover:text-gray-400">Register</a>
+          @end
+        </div>
+      </nav>
+    </header>
+
+    <main class="grow max-w-6xl px-4 mx-auto">
+      {{{ await $slots.main() }}}
+    </main>
+  </body>
+</html>

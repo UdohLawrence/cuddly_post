@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html class="h-full">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>
+      {{ title }}
+    </title>
+
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
+  </head>
+  <body class="bg-gray-50 flex flex-col min-h-full w-full">
+
+    <main class="grow max-w-6xl px-4">
+      {{{ await $slots.main() }}}
+    </main>
+  </body>
+</html>
