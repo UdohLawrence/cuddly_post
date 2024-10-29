@@ -23,6 +23,7 @@
           @eval(await auth.check())
           @if(auth.isAuthenticated)
             <div>Hello, {{auth.user.username}}</div>
+            <a href="/post" class="text-gray-600 font-medium hover:text-gray-400">Create Post</a>
             <form action="/logout?_method=DELETE" method="post">
               {{csrfField()}}
               <button class="text-gray-600 font-medium hover:text-gray-400">Logout</button>
