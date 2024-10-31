@@ -24,11 +24,11 @@ This is a fullstack microblogging application developed using AdonisJS 6, EdgeJS
    git clone https://github.com/UdohLawrence/cuddly_posts.git
    cd cuddly_posts
 
-2. Install Dependencies
+2. Install Dependencies:
   ```sh
   npm install
 
-3. Setup the Database
+3. Setup the Database:
   - Create a new MySQL database.
   - Update the .env file with your database credentials:
     ```sh
@@ -39,11 +39,11 @@ This is a fullstack microblogging application developed using AdonisJS 6, EdgeJS
     DB_PASSWORD=your-db-password
     DB_DATABASE=your-db-name
 
-4. Run Migrations
+4. Run Migrations:
   ```sh
   node ace migration:run
 
-5. Start the Application
+5. Start the Application:
   ```sh
   node ace serve --hmr
 
