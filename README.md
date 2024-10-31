@@ -21,5 +21,5 @@ This is a fullstack microblogging application developed using AdonisJS 6, EdgeJS
 
 1. Clone the repository:
    ```sh
-   git clone https://github.com/UdohLawrence/cuddly-posts.git
-   cd cuddly-posts
+   git clone https://github.com/UdohLawrence/cuddly_posts.git
+   cd cuddly_posts
