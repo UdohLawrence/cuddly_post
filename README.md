@@ -28,6 +28,7 @@ This is a fullstack microblogging application developed using AdonisJS 6, EdgeJS
   ```sh
   npm install
 
+
 3. Setup the Database:
   - Create a new MySQL database.
   - Update the .env file with your database credentials:
@@ -39,13 +40,12 @@ This is a fullstack microblogging application developed using AdonisJS 6, EdgeJS
     DB_PASSWORD=your-db-password
     DB_DATABASE=your-db-name
 
+
 4. Run Migrations:
   ```sh
   node ace migration:run
 
+
 5. Start the Application:
   ```sh
   node ace serve --hmr
-
-
-
